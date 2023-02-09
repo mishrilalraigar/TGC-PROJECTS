@@ -1,0 +1,111 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class Javaquiz1
+{
+    static int op=0;
+    public void quiz()
+    {
+
+        JFrame frm = new JFrame("Java Quiz");
+        frm.setBounds(200,200,600,600);
+
+
+        JLabel qu = new JLabel("JAVA QUIZ");
+        qu.setBounds(250,20,100,20);
+        qu.setForeground(Color.BLUE);
+        qu.setFont(new Font("Verdana", Font.PLAIN, 18));
+        frm.add(qu);
+        JLabel qu1 = new JLabel("1. What are the differences between C++ and Java?");
+        qu1.setBounds(20, 60, 500,20);
+        qu1.setForeground(Color.BLACK);
+        qu1.setFont(new Font("arial", Font.BOLD, 16));
+        frm.add(qu1);
+        frm.setLayout(null);
+        JRadioButton ans1 = new JRadioButton("Radio Button 1");
+        ans1.setBounds(20, 90, 250,20);
+        JRadioButton ans2 = new JRadioButton("Radio Button 2");
+        ans2.setBounds(300, 90, 250,20);
+        JRadioButton ans3 = new JRadioButton("Radio Button 3");
+        ans3.setBounds(20, 120, 250,20);
+        JRadioButton ans4 = new JRadioButton("Radio Button 4");
+        ans4.setBounds(300, 120, 250,20);
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(ans1);
+        group.add(ans2);
+        group.add(ans3);
+        group.add(ans4);
+
+        frm.add(ans1);
+        frm.add(ans2);
+        frm.add(ans3);
+        frm.add(ans4);
+
+        JButton bt = new JButton("NEXT");
+        bt.setBounds(200, 180, 100,30);
+        frm.add(bt);
+        frm.setVisible(true);
+
+        ActionListener click = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String arrqu1[]={"Which of the following option leads to the portability and security of Java?"};
+                String arrans1[]={"Bytecode is executed by JVM","The applet makes the Java code secure and portable","Use of exception handling","Dynamic binding between objects"};
+                String arrqu2[]={"Which of the following is not a Java features?"};
+                String arrns2[]={"Dynamic","Architecture Neutral","Use of pointers","Object-oriented"};
+
+                String arrqu3[]={"Which of the following is a valid declaration of a char?"};
+                String arrns3[]={"char ch = '//utea';","char ca = 'tea';","char cr = //u0223;","har cc = 'itea';"};
+                System.out.println(arrqu1[0]);
+
+if(op==0)
+{
+    qu1.setText(arrqu1[0]);
+    ans1.setText(arrans1[0]);
+    ans2.setText(arrans1[1]);
+    ans3.setText(arrans1[2]);
+    ans3.setText(arrans1[3]);
+op++;
+}
+else if(op==1)
+                {
+                    qu1.setText(arrqu2[0]);
+                    ans1.setText(arrns2[0]);
+                    ans2.setText(arrns2[1]);
+                    ans3.setText(arrns2[2]);
+                    ans3.setText(arrns2[3]);
+                    op++;
+                }
+else if(op==2)
+{
+    qu1.setText(arrqu3[0]);
+    ans1.setText(arrns3[0]);
+    ans2.setText(arrns3[1]);
+    ans3.setText(arrns3[2]);
+    ans3.setText(arrns3[3]);
+    op++;
+}
+
+
+
+
+            }
+        };
+        bt.addActionListener(click);
+
+
+
+
+    }
+
+}
+public class Java_quiz {
+    public static void main(String[] args) {
+Javaquiz1 obj = new Javaquiz1();
+      obj.quiz();
+    }
+}
